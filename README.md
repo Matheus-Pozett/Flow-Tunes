@@ -80,12 +80,12 @@ Neste projeto, verificamos se você é capaz de:
 
   - `npm install`.
   
-  3. Crie uma branch a partir da branch `master`
+  3. Crie uma branch a partir da branch `main`
 
-  - Verifique se você está na branch `master`.
+  - Verifique se você está na branch `main`.
     - Exemplo: `git branch`
-  - Se não estiver, mude para a branch `master`.
-    - Exemplo: `git checkout master`
+  - Se não estiver, mude para a branch `main`.
+    - Exemplo: `git checkout main`
   - Agora crie uma branch à qual você vai submeter os `commits` do seu projeto
     - Você deve criar uma branch no seguinte formato: `nome-de-usuario-nome-do-projeto`
     - Exemplo: `git checkout -b joaozinho-sd-0x-project-trybetunes`
