@@ -33,7 +33,7 @@ function Header() {
     <header data-testid="header-component">
       {loading ? (<Loading />
       ) : (
-        <section>
+        <>
           <img src="/src/images/logo.svg" alt="Logo da aplicação" />
           <nav>
             <NavLink to="/search" data-testid="link-to-search">Pesquisa</NavLink>
@@ -41,7 +41,7 @@ function Header() {
             <NavLink to="/profile" data-testid="link-to-profile">Perfil</NavLink>
           </nav>
           <p data-testid="header-user-name">{username.name}</p>
-        </section>
+        </>
       )}
     </header>
   );
