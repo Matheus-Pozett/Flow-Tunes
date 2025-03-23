@@ -11,10 +11,14 @@ function MusicCard({ data }: MusicCardProps) {
 
   useEffect(() => {
     const checkIfFavorited = async () => {
-      const favoriteSongs = await getFavoriteSongs();
-      const isFavorited = favoriteSongs
-        .some((song: SongType) => song.trackId === data.trackId);
-      setIsFavorite(isFavorited);
+      try {
+        const favoriteSongs = await getFavoriteSongs();
+        const isFavorited = favoriteSongs
+          .some((song: SongType) => song.trackId === data.trackId);
+        setIsFavorite(isFavorited);
+      } catch (error) {
+        console.error('Erro', error);
+      }
     };
 
     checkIfFavorited();
