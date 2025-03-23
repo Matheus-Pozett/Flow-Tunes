@@ -6,11 +6,11 @@ import { AlbumType } from '../../types';
 type SearchProps = {
   artistName: string,
   setArtistName: (e: string) => void,
-  songList: AlbumType[],
-  setSongList: (e: AlbumType[]) => void,
+  albumList: AlbumType[],
+  setAlbumList: (e: AlbumType[]) => void,
 };
 
-function Search({ artistName, setArtistName, setSongList, songList }: SearchProps) {
+function Search({ artistName, setArtistName, setAlbumList, albumList }: SearchProps) {
   const [searchValue, setSearchValue] = useState('');
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
@@ -25,7 +25,7 @@ function Search({ artistName, setArtistName, setSongList, songList }: SearchProp
 
     try {
       const getSongs = await searchAlbumsAPI(searchValue);
-      setSongList(getSongs);
+      setAlbumList(getSongs);
       setArtistName(searchValue);
       setSearchValue('');
       setSearched(true);
@@ -56,14 +56,14 @@ function Search({ artistName, setArtistName, setSongList, songList }: SearchProp
         </form>
       )}
 
-      {searched && songList.length === 0 && <p>Nenhum álbum foi encontrado</p>}
+      {searched && albumList.length === 0 && <p>Nenhum álbum foi encontrado</p>}
 
-      {songList.length > 0 && (
+      {albumList.length > 0 && (
         <div>
           <p>{`Resultado de álbuns de: ${artistName}`}</p>
           <div>
-            {songList.map((song) => (
-              <AlbumCard key={ song.collectionId } data={ song } />
+            {albumList.map((album) => (
+              <AlbumCard key={ album.collectionId } data={ album } />
             ))}
           </div>
         </div>
