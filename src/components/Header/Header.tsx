@@ -1,15 +1,8 @@
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { UserType } from '../../types';
+import { USER_VALUES, UserType } from '../../types';
 import { getUser } from '../../services/userAPI';
 import { Loading } from '../Loading';
-
-const USER_VALUES: UserType = {
-  name: '',
-  email: '',
-  image: '',
-  description: '',
-};
 
 function Header() {
   const [username, setUsername] = useState<UserType>(USER_VALUES);
