@@ -7,7 +7,7 @@ type MusicCardProps = {
   onRemove: (song: SongType) => void,
 };
 
-function MusicCard({ data, onRemove }: MusicCardProps) {
+function MusicCard({ data, onRemove = () => {} }: MusicCardProps) {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   useEffect(() => {
