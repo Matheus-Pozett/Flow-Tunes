@@ -4,9 +4,10 @@ import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSo
 
 type MusicCardProps = {
   data: SongType,
+  onRemove: (song: SongType) => void,
 };
 
-function MusicCard({ data }: MusicCardProps) {
+function MusicCard({ data, onRemove }: MusicCardProps) {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,11 +28,11 @@ function MusicCard({ data }: MusicCardProps) {
   const handleFavoriteToggle = () => {
     if (isFavorite) {
       removeSong(data);
-      setIsFavorite(false);
+      onRemove(data);
     } else {
       addSong(data);
-      setIsFavorite(true);
     }
+    setIsFavorite(!isFavorite);
   };
 
   return (
