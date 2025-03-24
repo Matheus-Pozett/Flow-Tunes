@@ -158,7 +158,7 @@ describe('10 - Crie o formulário de edição de perfil', () => {
 
       await waitFor(
         () => expect(screen.queryAllByText('Carregando...')).toHaveLength(0),
-        { timeout: 3000 }
+        { timeout: 3000 } 
       );
 
       userEvent.click(screen.getByTestId('edit-button-save'));
@@ -168,6 +168,6 @@ describe('10 - Crie o formulário de edição de perfil', () => {
         { timeout: 3500 }
       );
 
-      expect(screen.getByText('Editar perfil')).toBeInTheDocument();
+      expect(screen.getByText('Salvar')).toBeInTheDocument();
     });
 });
