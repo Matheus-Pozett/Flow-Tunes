@@ -3,12 +3,12 @@ import { Header } from '../Header';
 
 function Layout() {
   return (
-    <>
+    <div className="flex">
       <Header />
-      <main>
+      <main className="flex flex-1">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 }
 
