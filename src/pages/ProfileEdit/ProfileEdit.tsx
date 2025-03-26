@@ -64,59 +64,111 @@ function ProfileEdit() {
     return <Loading />;
   }
   return (
-    <form onSubmit={ handleClick }>
-      <div>
-        <img src={ user.image } alt="Foto do usuario" />
-        <input
-          type="text"
-          name="image"
-          data-testid="edit-input-image"
-          value={ user.image }
-          onChange={ handleChange }
-        />
-      </div>
-
-      <div>
-        <label htmlFor="input-name">Nome</label>
-        <input
-          type="text"
-          name="name"
-          id="input-name"
-          data-testid="edit-input-name"
-          value={ user.name }
-          onChange={ handleChange }
-        />
-      </div>
-
-      <div>
-        <label htmlFor="input-email">E-mail</label>
-        <input
-          type="text"
-          name="email"
-          id="input-email"
-          data-testid="edit-input-email"
-          value={ user.email }
-          onChange={ handleChange }
-        />
-      </div>
-
-      <div>
-        <label htmlFor="input-descri">Descrição</label>
-        <textarea
-          name="description"
-          id="input-descri"
-          data-testid="edit-input-description"
-          value={ user.description }
-          onChange={ handleChange }
-        />
-      </div>
-      <button
-        data-testid="edit-button-save"
-        disabled={ !formIsValid }
+    <div className="bg-loading flex flex-col flex-1">
+      <form
+        onSubmit={ handleClick }
+        className="bg-[#EFF3F9] mt-56 flex flex-1 items-center justify-center
+        p-8 relative"
       >
-        Salvar
-      </button>
-    </form>
+        <div
+          className=" absolute top-0 left-20 -translate-y-1/2 flex flex-col
+        gap-4 items-center"
+        >
+          <img
+            src="/src/images/user.webp"
+            alt="Foto do usuario"
+            className="w-60 h-60 rounded-full shadow-2xl"
+          />
+          <input
+            type="text"
+            name="image"
+            data-testid="edit-input-image"
+            placeholder="Insira um link"
+            className="w-48 h-[2.313rem] mt-2.5 border border-[#3D495C]
+            bg-inherit text-center text-[#444955] placeholder:text-[#444955]
+            placeholder:text-sm"
+            value={ user.image }
+            onChange={ handleChange }
+          />
+        </div>
+
+        <div className="h-full flex flex-col gap-4 ml-20">
+          <div className="flex flex-col">
+            <label
+              htmlFor="input-name"
+              className="text-[#3D495C] font-bold"
+            >
+              Nome
+            </label>
+            <p
+              className="text-xs text-[#3D495C]"
+            >
+              Fique à vontade para usar seu nome social
+            </p>
+            <input
+              type="text"
+              name="name"
+              id="input-name"
+              data-testid="edit-input-name"
+              placeholder="Digite seu nome"
+              className="w-72 h-[2.313rem] mt-2.5 border-b border-[#3D495C] bg-inherit"
+              value={ user.name }
+              onChange={ handleChange }
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label
+              htmlFor="input-email"
+              className="text-[#3D495C] font-bold"
+            >
+              E-mail
+            </label>
+            <p
+              className="text-xs text-[#3D495C]"
+            >
+              Escolha um e-mail que consulte diariamente
+            </p>
+            <input
+              type="text"
+              name="email"
+              id="input-email"
+              data-testid="edit-input-email"
+              placeholder="Digite seu e-mail"
+              className="w-72 h-[2.313rem] mt-2.5 border-b border-[#3D495C]"
+              value={ user.email }
+              onChange={ handleChange }
+            />
+          </div>
+
+          <div className="flex flex-col">
+            <label
+              htmlFor="input-descri"
+              className="text-[#3D495C] font-bold"
+            >
+              Descrição
+            </label>
+            <textarea
+              name="description"
+              id="input-descri"
+              data-testid="edit-input-description"
+              placeholder="Sobre mim"
+              className="w-[30.625rem] h-[6.625rem] p-2 mt-2.5 border-b border-[#3D495C]"
+              value={ user.description }
+              onChange={ handleChange }
+            />
+          </div>
+          <button
+            data-testid="edit-button-save"
+            className="bg-login-blue w-[9.5rem] h-10 rounded-full text-sm
+            text-white uppercase font-bold"
+            disabled={ !formIsValid }
+          >
+            Salvar
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
 

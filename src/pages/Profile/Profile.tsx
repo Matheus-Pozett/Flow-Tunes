@@ -58,7 +58,8 @@ function Profile() {
 
         <Link
           to="/profile/edit"
-          className="mt-6 inline-block bg-blue-600 text-white px-6 py-2 rounded-full font-semibold shadow-md hover:bg-blue-700 transition"
+          className="mt-6 inline-block bg-blue-600 text-white px-6 py-2
+          rounded-full font-semibold shadow-md hover:bg-blue-700 transition"
         >
           Editar perfil
         </Link>
