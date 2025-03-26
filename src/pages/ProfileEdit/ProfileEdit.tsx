@@ -77,7 +77,7 @@ function ProfileEdit() {
           <img
             src="/src/images/user.webp"
             alt="Foto do usuario"
-            className="w-60 h-60 rounded-full shadow-2xl"
+            className="w-60 h-60  border-4 border-white shadow-lg rounded-full"
           />
           <input
             type="text"

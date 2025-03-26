@@ -31,15 +31,14 @@ function Profile() {
       <div className="w-full h-56 bg-loading relative">
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
           <img
-            src={ user.image }
+            src="/src/images/user.webp"
             alt="Foto de perfil do usuário"
             data-testid="profile-image"
-            className="w-32 h-32 rounded-full border-4 border-white shadow-lg"
+            className="w-60 h-60 rounded-full border-4 border-white shadow-lg"
           />
         </div>
       </div>
 
-      {/* Conteúdo do perfil */}
       <div className="mt-20 bg-white shadow-lg rounded-lg p-2 w-3/4 max-w-lg text-center">
         <div className="text-gray-800">
           <p className="text-lg font-semibold">Nome</p>
