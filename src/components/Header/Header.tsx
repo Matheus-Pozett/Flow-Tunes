@@ -25,7 +25,7 @@ function Header() {
   return (
     <header
       data-testid="header-component"
-      className="w-[15.625rem] h-screen flex flex-col py-8 px-10 justify-between"
+      className="w-[15.625rem] h-screen flex flex-col py-8 px-10 justify-between fixed"
     >
       <img
         src="/src/images/logo.svg"
