@@ -37,14 +37,23 @@ function Favorites() {
   }
 
   return (
-    <div>
-      <ul>
-        {favorites.map((song) => (
-          <li key={ song.trackId }>
-            <MusicCard data={ song } onRemove={ handleRemoveFavorite } />
-          </li>
-        ))}
-      </ul>
+    <div className="bg-login flex flex-1 flex-col">
+      <div className="h-56 flex items-center justify-center text-white font-bold text-xl">
+        <h1>Músicas Favoritas</h1>
+      </div>
+      <section className="bg-[#EFF3F9] flex flex-1 items-center justify-center">
+        <ul className="flex flex-col mt-9 gap-8 mb-9">
+          {favorites.map((song) => (
+            <li
+              key={ song.trackId }
+              className="w-[36.875rem] h-[3.813rem] border-b last:border-b-0
+              border-gray-300"
+            >
+              <MusicCard data={ song } onRemove={ handleRemoveFavorite } />
+            </li>
+          ))}
+        </ul>
+      </section>
     </div>
   );
 }

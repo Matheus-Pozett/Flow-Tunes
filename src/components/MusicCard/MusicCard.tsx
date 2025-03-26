@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { SongType } from '../../types';
 import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
+import './musicCard.css';
 
 type MusicCardProps = {
   data: SongType,
@@ -36,9 +37,14 @@ function MusicCard({ data, onRemove = () => {} }: MusicCardProps) {
   };
 
   return (
-    <div>
-      <p>{data.trackName}</p>
-      <audio data-testid="audio-component" src={ data.previewUrl } controls>
+    <div className="flex justify-between items-center h-full">
+      <p className="w-[7.625rem] truncate">{data.trackName}</p>
+      <audio
+        data-testid="audio-component"
+        src={ data.previewUrl }
+        controls
+        className="w-[23.125rem] h-[3.438rem]"
+      >
         <track kind="captions" />
         O seu navegador não suporta o elemento
         {' '}
@@ -59,6 +65,7 @@ function MusicCard({ data, onRemove = () => {} }: MusicCardProps) {
         id={ `fav-${data.trackId}` }
         checked={ isFavorite }
         onChange={ handleFavoriteToggle }
+        className="hidden"
       />
     </div>
   );
