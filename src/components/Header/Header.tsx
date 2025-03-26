@@ -69,7 +69,7 @@ function Header() {
       ) : (
         <div className="flex items-center gap-3">
           <img src="/src/images/foto.png" alt="" />
-          <p>{username.name}</p>
+          <p data-testid="header-user-name">{username.name}</p>
         </div>)}
     </header>
   );

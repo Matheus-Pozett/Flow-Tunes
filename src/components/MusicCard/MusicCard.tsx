@@ -4,7 +4,7 @@ import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSo
 
 type MusicCardProps = {
   data: SongType,
-  onRemove: (song: SongType) => void,
+  onRemove?: (song: SongType) => void,
 };
 
 function MusicCard({ data, onRemove = () => {} }: MusicCardProps) {
