@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../../services/userAPI';
 import { Loading } from '../../components';
+import logo from '../../images/logo.svg';
 
 function Login() {
   const [inputValue, setInputValue] = useState('');
@@ -40,7 +41,7 @@ function Login() {
         items-center"
       >
         <img
-          src="/src/images/logo.svg"
+          src={ logo }
           alt="logo da aplicação"
           className="w-[11.688rem] h-[6.563rem] mt-28"
         />
