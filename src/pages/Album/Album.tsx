@@ -57,7 +57,7 @@ function Album() {
         </div>
       </section>
 
-      <section className="bg-[#EFF3F9]">
+      <section className="bg-[#EFF3F9] flex flex-col flex-1">
         <ul className="flex flex-col items-center mt-9 gap-8 mb-9">
           {songs.map((song) => (
             <li

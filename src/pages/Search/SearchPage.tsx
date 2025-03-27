@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { AlbumCard } from '../../components';
 import searchAlbumsAPI from '../../services/searchAlbumsAPI';
 import { AlbumType } from '../../types';
+import iconsearch from '../../images/icon_search.svg';
+import circleerror from '../../images/icon_circleerror.svg';
 
 type SearchProps = {
   artistName: string,
@@ -53,7 +55,7 @@ function Search({ artistName, setArtistName, setAlbumList, albumList }: SearchPr
             placeholder:text-white placeholder:text-sm placeholder:uppercase"
           />
           <img
-            src="/src/images/icon_search.svg"
+            src={ iconsearch }
             alt=""
             className="absolute right-3 top-1/2 transform -translate-y-1/2"
           />
@@ -80,7 +82,7 @@ function Search({ artistName, setArtistName, setAlbumList, albumList }: SearchPr
                 className="flex flex-col flex-1 items-center justify-center gap-4"
               >
                 <img
-                  src="/src/images/icon_circleerror.svg"
+                  src={ circleerror }
                   alt=""
                   className="w-16 h-16"
                 />
