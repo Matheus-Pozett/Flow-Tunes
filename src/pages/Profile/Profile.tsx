@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { USER_VALUES, UserType } from '../../types';
 import { getUser } from '../../services/userAPI';
 import { Loading } from '../../components';
+import userimg from '../../images/user.webp';
 
 function Profile() {
   const [user, setUser] = useState<UserType>(USER_VALUES);
@@ -31,7 +32,7 @@ function Profile() {
       <div className="w-full h-56 bg-loading relative">
         <div className="absolute top-10 left-1/2 transform -translate-x-1/2">
           <img
-            src="/src/images/user.webp"
+            src={ userimg }
             alt="Foto de perfil do usuário"
             data-testid="profile-image"
             className="w-60 h-60 rounded-full border-4 border-white shadow-lg"

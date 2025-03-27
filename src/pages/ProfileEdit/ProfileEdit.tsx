@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Loading } from '../../components';
 import { getUser, updateUser } from '../../services/userAPI';
 import { USER_VALUES, UserType } from '../../types';
+import userimg from '../../images/user.webp';
 
 function ProfileEdit() {
   const [user, setUser] = useState<UserType>(USER_VALUES);
@@ -75,7 +76,7 @@ function ProfileEdit() {
         gap-4 items-center"
         >
           <img
-            src="/src/images/user.webp"
+            src={ userimg }
             alt="Foto do usuario"
             className="w-60 h-60  border-4 border-white shadow-lg rounded-full"
           />
