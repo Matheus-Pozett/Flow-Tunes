@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
-import { Album, Favorites, Login, Profile, ProfileEdit, Search } from './pages';
+import { Album, Favorites, Login, NotFound, Profile, ProfileEdit, Search } from './pages';
 import { AlbumType } from './types';
 import { Layout } from './components';
 
@@ -26,8 +26,8 @@ function App() {
           <Route path="/favorites" element={ <Favorites /> } />
           <Route path="/profile" element={ <Profile /> } />
           <Route path="/profile/edit" element={ <ProfileEdit /> } />
-          {/* <Route path="/*" element={ <NotFound /> } /> */}
         </Route>
+        <Route path="/*" element={ <NotFound /> } />
       </Routes>
     </div>
   );

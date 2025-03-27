@@ -10,7 +10,8 @@ export default {
     extend: {
       backgroundImage: {
         'login': "url('/src/images/login.svg')",
-        'loading': "url('/src/images/carregamento1.svg')"
+        'loading': "url('/src/images/carregamento1.svg')",
+        'notfound': "url('/src/images/background-erro.svg')"
       },
       colors: {
         'login-blue': '#003BE5',
