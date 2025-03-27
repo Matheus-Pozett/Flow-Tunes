@@ -21,3 +21,10 @@ export type SongType = {
   trackName: string,
   previewUrl: string,
 };
+
+export const USER_VALUES: UserType = {
+  name: '',
+  email: '',
+  image: '',
+  description: '',
+};
