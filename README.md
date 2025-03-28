@@ -4,7 +4,7 @@ Bem-vindo ao **TrybeTunes**! Este projeto permite que você busque músicas e á
 
 ## 🌐 Veja o Projeto Online
 
-Acesse o projeto online através do [link](trybetunes-pozett.vercel.app).
+Acesse o projeto online através do [link](https://trybetunes-pozett.vercel.app).
 
 ## 🚀 Funcionalidades
 
