@@ -11,9 +11,9 @@ module.exports = {
         'cyan': '#00D5E2',
       },
       backgroundImage: {
-        'login': "url('./src/images/login.svg')",
-        'loading': "url('./src/images/carregamento1.svg')",
-        'notfound': "url('./src/images/background-erro.svg')",
+        'login': "url('src/images/login.svg')",
+        'loading': "url('src/images/carregamento1.svg')",
+        'notfound': "url('src/images/background-erro.svg')",
       },
       screens: {
         'xs': '475px',
