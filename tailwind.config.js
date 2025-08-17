@@ -12,9 +12,9 @@ module.exports = {
         'cyan': '#00D5E2',
       },
       backgroundImage: {
-        'login': "url('src/images/login.svg')",
-        'loading': "url('src/images/carregamento1.svg')",
-        'notfound': "url('src/images/background-erro.svg')",
+        'login': "url('/images/login.svg')",
+        'loading': "url('/images/carregamento1.svg')",
+        'notfound': "url('/images/background-erro.svg')",
       },
       fontFamily: {
         'sans': ['"Epilogue"', ...defaultTheme.fontFamily.sans],
