@@ -42,73 +42,83 @@ function Search({ artistName, setArtistName, setAlbumList, albumList }: SearchPr
     <div className="flex flex-1 flex-col">
       <form
         onSubmit={ handleSubmitSearch }
-        className="flex items-center justify-center bg-login h-56 gap-4"
+        className="flex flex-col sm:flex-row items-center justify-center bg-login
+                   h-32 sm:h-56 gap-4 p-4 sm:p-0"
       >
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <input
             type="text"
             data-testid="search-artist-input"
             value={ searchValue }
             onChange={ handleChangeSearch }
             placeholder="Digite a sua pesquisa"
-            className="w-[25rem] h-10 rounded-3xl px-5 bg-[#ffffff80]
-            placeholder:text-white placeholder:text-sm placeholder:uppercase"
+            className="w-full sm:w-[25rem] h-10 rounded-3xl px-5 bg-[#ffffff80]
+                       placeholder:text-white placeholder:text-sm placeholder:uppercase
+                       text-sm sm:text-base pr-12"
           />
           <img
             src={ iconsearch }
             alt=""
-            className="absolute right-3 top-1/2 transform -translate-y-1/2"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 sm:w-5
+            sm:h-5"
           />
         </div>
         <button
           data-testid="search-artist-button"
           disabled={ searchValue.length < 2 }
-          className="w-28 h-10 bg-[#00D5E2] rounded-3xl uppercase text-white
-            text-sm font-bold disabled:bg-gray-400"
+          className="w-full sm:w-28 h-10 bg-[#00D5E2] rounded-3xl uppercase text-white
+                     text-sm font-bold disabled:bg-gray-400 px-4"
         >
           Procurar
         </button>
       </form>
       {loading ? (
-        <div className="flex gap-8 flex-1 items-center justify-center flex-col">
+        <div
+          className="flex gap-4 sm:gap-8 flex-1 items-center
+        justify-center flex-col p-4"
+        >
           <span className="loader-header" />
-          <p className="text-3xl font-normal text-[#C0C3C9]">Carregando...</p>
+          <p
+            className="text-xl sm:text-3xl font-normal text-[#C0C3C9]
+          text-center"
+          >
+            Carregando...
+          </p>
         </div>
       ) : (
         <section className="flex flex-1 bg-[#EFF3F9]">
-          {searched && albumList.length === 0
-            && (
-              <div
-                className="flex flex-col flex-1 items-center justify-center gap-4"
-              >
-                <img
-                  src={ circleerror }
-                  alt=""
-                  className="w-16 h-16"
-                />
-                <p
-                  className="text-3xl font-normal text-[#C0C3C9]"
-                >
-                  Nenhum álbum foi encontrado
-                </p>
-              </div>
-            )}
+          {searched && albumList.length === 0 && (
+            <div className="flex flex-col flex-1 items-center justify-center gap-4 p-4">
+              <img
+                src={ circleerror }
+                alt=""
+                className="w-12 h-12 sm:w-16 sm:h-16"
+              />
+              <p className="text-xl sm:text-3xl font-normal text-[#C0C3C9] text-center">
+                Nenhum álbum foi encontrado
+              </p>
+            </div>
+          )}
 
           {albumList.length > 0 && (
-            <div className="flex flex-col items-center flex-1 py-14">
+            <div className="flex flex-col items-center flex-1 py-8 sm:py-14 px-4">
               <p
-                className="text-login-blue text-xl italic font-light mb-12"
+                className="text-login-blue text-base sm:text-xl italic
+              font-light mb-8 sm:mb-12 text-center"
               >
                 {`Resultado de álbuns de: ${artistName}`}
               </p>
+
               <ul
-                className="inline-grid grid-cols-4 gap-10"
+                className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5
+                           gap-4 sm:gap-6 lg:gap-10 w-full max-w-7xl"
               >
                 {albumList.map((album) => (
                   <li
                     key={ album.collectionId }
-                    className="w-[12.5rem] h-[15.5rem] transition-transform
-                    duration-300 hover:scale-110"
+                    className="w-full max-w-[12.5rem] mx-auto
+                             transition-transform duration-300 hover:scale-105
+                             sm:hover:scale-110"
                   >
                     <AlbumCard data={ album } />
                   </li>
@@ -118,7 +128,6 @@ function Search({ artistName, setArtistName, setAlbumList, albumList }: SearchPr
           )}
         </section>
       )}
-
     </div>
   );
 }

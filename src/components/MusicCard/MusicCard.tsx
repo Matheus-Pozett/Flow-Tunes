@@ -39,36 +39,52 @@ function MusicCard({ data, onRemove = () => {} }: MusicCardProps) {
   };
 
   return (
-    <div className="flex justify-between items-center h-full">
-      <p className="w-[7.625rem] truncate">{data.trackName}</p>
-      <audio
-        data-testid="audio-component"
-        src={ data.previewUrl }
-        controls
-        className="w-[23.125rem] h-[3.438rem]"
-      >
-        <track kind="captions" />
-        O seu navegador não suporta o elemento
-        {' '}
-        {' '}
-        <code>audio</code>
-        .
-      </audio>
-      <label
-        htmlFor={ `fav-${data.trackId}` }
-        data-testid={ `checkbox-music-${data.trackId}` }
-      >
-        {isFavorite
-          ? <img src={ checked_heart } alt="favorite" />
-          : <img src={ empty_heart } alt="favorite" />}
-      </label>
-      <input
-        type="checkbox"
-        id={ `fav-${data.trackId}` }
-        checked={ isFavorite }
-        onChange={ handleFavoriteToggle }
-        className="hidden"
-      />
+    <div
+      className="flex flex-col sm:flex-row sm:justify-between sm:items-center
+                    gap-3 sm:gap-4 h-full py-2"
+    >
+      <div className="flex-shrink-0 sm:w-[7.625rem]">
+        <p className="text-sm sm:text-base font-medium truncate text-gray-800">
+          {data.trackName}
+        </p>
+      </div>
+      <div className="flex items-center justify-between gap-3 sm:gap-4 flex-1">
+        <div className="flex-1 min-w-0">
+          <audio
+            data-testid="audio-component"
+            src={ data.previewUrl }
+            controls
+            className="w-full h-8 sm:h-[3.438rem] max-w-[23.125rem]"
+          >
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            {' '}
+            <code>audio</code>
+            .
+          </audio>
+        </div>
+        <div className="flex-shrink-0">
+          <label
+            htmlFor={ `fav-${data.trackId}` }
+            data-testid={ `checkbox-music-${data.trackId}` }
+            className="cursor-pointer block p-1 sm:p-2"
+          >
+            <img
+              src={ isFavorite ? checked_heart : empty_heart }
+              alt="favorite"
+              className="w-5 h-5 sm:w-6 sm:h-6 hover:scale-110 transition-transform"
+            />
+          </label>
+          <input
+            type="checkbox"
+            id={ `fav-${data.trackId}` }
+            checked={ isFavorite }
+            onChange={ handleFavoriteToggle }
+            className="hidden"
+          />
+        </div>
+
+      </div>
     </div>
   );
 }

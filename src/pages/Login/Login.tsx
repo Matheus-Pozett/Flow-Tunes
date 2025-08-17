@@ -33,19 +33,23 @@ function Login() {
 
   return (
     <section
-      className="bg-login bg-no-repeat bg-cover h-screen flex justify-center items-center"
+      className="bg-login bg-no-repeat bg-cover h-screen flex justify-center
+        items-center p-4"
     >
       <div
         className="
-        bg-white w-[46.875rem] h-[28.125rem] rounded-2xl flex flex-col
-        items-center"
+        bg-white w-full max-w-lg h-auto rounded-2xl flex flex-col
+        items-center p-8 md:w-[46.875rem] md:h-[28.125rem] md:p-0"
       >
         <img
           src={ logo }
           alt="logo da aplicação"
-          className="w-[11.688rem] h-[6.563rem] mt-28"
+          className="w-[11.688rem] h-auto mt-10 md:mt-28"
         />
-        <form onSubmit={ handleSubmitForm } className="flex flex-col mt-14 gap-2.5">
+        <form
+          onSubmit={ handleSubmitForm }
+          className="flex flex-col mt-10 md:mt-14 gap-2.5 w-full md:w-auto"
+        >
           <input
             type="text"
             data-testid="login-name-input"
@@ -53,13 +57,14 @@ function Login() {
             value={ inputValue }
             onChange={ handleChangeLogin }
             className="
-            w-[25rem] h-10 text-center rounded-full border border-login-blue
+            w-full md:w-[25rem] h-10 text-center rounded-full border border-login-blue
             text-login-blue placeholder:text-login-blue placeholder:text-sm font-normal"
           />
           <button
             disabled={ inputValue.length < 3 }
             data-testid="login-submit-button"
-            className="rounded-full bg-login-blue w-[25rem] h-10 uppercase text-white
+            className="rounded-full bg-login-blue w-full md:w-[25rem] h-10 uppercase
+              text-white
             font-bold text-center disabled:bg-gray-400 disabled:cursor-not-allowed"
           >
             Entrar

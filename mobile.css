@@ -1,0 +1,96 @@
+@media (max-width: 640px) {
+  audio {
+    max-height: 32px;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color: white;
+  }
+
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-pause-button {
+    background-size: 13px 13px;
+    width: 30px;
+    height: 30px;
+  }
+
+  audio::-webkit-media-controls-volume-slider {
+    display: none;
+  }
+
+  audio::-webkit-media-controls-mute-button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  button, 
+  [role="button"], 
+  input[type="submit"], 
+  input[type="button"],
+  label {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .mobile-menu-transition {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .mobile-menu-open {
+    transform: translateX(0);
+  }
+  
+  .mobile-menu-closed {
+    transform: translateX(100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-smooth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+@media (max-width: 768px) {
+  input:focus,
+  textarea:focus {
+    transform: scale(1.02);
+    transition: transform 0.2s ease;
+  }
+}
+
+.loader-header-mobile {
+  animation: mulShdSpin 1.3s infinite linear;
+  border-radius: 50%;
+  color: #00d5e2;
+  font-size: 4px;
+  height: 4px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  width: 4px;
+}
+
+@media (max-width: 375px) {
+  .album-card {
+    min-width: 140px;
+  }
+  
+  .music-card-container {
+    padding: 0.5rem;
+  }
+}
+
+.bottom-nav {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .mobile-vh {
+    min-height: calc(100vh - env(keyboard-inset-height, 0px));
+  }
+}
