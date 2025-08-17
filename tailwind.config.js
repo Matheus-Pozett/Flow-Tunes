@@ -1,4 +1,5 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./index.html",
@@ -14,6 +15,9 @@ module.exports = {
         'login': "url('src/images/login.svg')",
         'loading': "url('src/images/carregamento1.svg')",
         'notfound': "url('src/images/background-erro.svg')",
+      },
+      fontFamily: {
+        'sans': ['"Epilogue"', ...defaultTheme.fontFamily.sans],
       },
       screens: {
         'xs': '475px',

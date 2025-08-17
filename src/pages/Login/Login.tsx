@@ -33,7 +33,7 @@ function Login() {
 
   return (
     <section
-      className="login bg-no-repeat bg-cover h-screen flex justify-center
+      className="bg-login bg-no-repeat bg-cover h-screen flex justify-center
         items-center p-4"
     >
       <div
